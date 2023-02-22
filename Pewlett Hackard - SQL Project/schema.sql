@@ -6,7 +6,7 @@ CREATE TABLE departments(
 	UNIQUE (dept_name)
 );
 
-Create table employees(
+CREATE TABLE employees(
 	emp_no INT NOT NULL,
 	birth_day DATE NOT NULL,
 	first_name VARCHAR not null,
@@ -16,7 +16,7 @@ Create table employees(
 	PRIMARY KEY (emp_no)
 );
 
-create table managers(
+CREATE TABLE managers(
 	dept_no VARCHAR not null,
 	emp_no INT NOT NULL,
 	from_date DATE NOT NULL,
@@ -26,7 +26,7 @@ create table managers(
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
 
-create table salaries(
+CREATE TABLE salaries(
 	emp_no INT NOT NULL,
 	salary INT NOT NULL,
 	from_date DATE NOT NULL,
@@ -35,7 +35,7 @@ create table salaries(
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
 
-create table titles(
+CREATE TABLE titles(
 	emp_no INT NOT NULL,
 	title VARCHAR not null,
 	from_date DATE NOT NULL,
@@ -45,7 +45,7 @@ create table titles(
 	FOREIGN KEY (emp_no) REFERENCES salaries (emp_no)
 );
 
-create TABLE dept_emp (
+CREATE TABLE dept_emp (
 	emp_no INT NOT NULL,  
 	dept_no VARCHAR(4) NOT NULL,
   	from_date DATE NOT NULL,
