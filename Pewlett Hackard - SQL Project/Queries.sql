@@ -1,5 +1,4 @@
--- Number of employees retiring
-
+-- Number of retiring employees
 SELECT first_name, last_name
 FROM employees
 WHERE (birth_day BETWEEN '1952-01-01' AND '1955-12-31')
@@ -15,7 +14,6 @@ INTO retirement_info
 FROM employees
 WHERE (birth_day BETWEEN '1952-01-01' AND '1955-12-31')
 AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
-
 
 DROP TABLE retirement_info;
 
@@ -44,7 +42,7 @@ FROM retirement_info
 LEFT JOIN dept_emp
 ON retirement_info.emp_no = dept_emp.emp_no;
 
--- the current employees who are eligible for retirement
+-- The current employees who are eligible for retirement
 SELECT ri.emp_no,
 	ri.first_name,
 	ri.last_name,
@@ -64,10 +62,7 @@ ON ce.emp_no = de.emp_no
 GROUP BY de.dept_no
 ORDER BY de.dept_no;
 
-
-
--- employee information about salaries
-
+-- Employee information about salaries
 SELECT e.emp_no,
 	e.first_name,
 	e.last_name,
@@ -98,7 +93,7 @@ ON (dm.dept_no = d.dept_no)
 INNER JOIN current_emp AS ce
 ON (dm.emp_no = ce.emp_no);
 
--- current employees that will retire (including their corresponding department)
+-- Current employees that will retire (including their corresponding department)
 SELECT ce.emp_no,
 	ce.first_name,
 	ce.last_name,
