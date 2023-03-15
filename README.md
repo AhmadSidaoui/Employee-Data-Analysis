@@ -1,5 +1,8 @@
 # Employee-Data-Analysis
 
+#Resources
+Software: SQL, Visual Studio Code
+
 # Overview
 Identifying Data Relationships with PostgreSQL. This challenge was to determine the number of retiring employees per title and identify employees who are eligible to participate in a mentorship program to help future-proof a company as current employees reach retirement age.
 
